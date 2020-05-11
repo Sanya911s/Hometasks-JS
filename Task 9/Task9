@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DZ9</title>
+</head>
+<body>
+
+
+<script>
+    // Так. Письмова таска.
+    // Зробити свій розпорядок дня.
+    //
+    // Мають бути функції, які є асинхронними (мають сетТаймАут або сетІнтервал) які описують якусь певну вашу дію в день.
+    // Наприклад функція прокинутись триває 1с, поїсти - 0,5с. Доїхати до роботи - 2с. Пообідати - 1с.
+    // Зробити таких функцій в районі 10 штук. Функція має приймати параметр, який буде відповідати за успішне чи не успішне виконання.
+    // Далі виконати їх в тій послідовності, в якій ви виконуєте їх у свій звичайний день.
+    //
+    // Тобто, як приклад
+    // Прокинулись - Поснідали - Зібрались - Поїхали на роботу - Працююєте - Пообідали - Працюєте - Випили кави - Працюєте - Поїхали до дому -
+    // Повчились - Лягли спати.
+    //
+    // Кожна функція має мати якесь успіше або не успішне виконання. Тобто можливий варіант, що при виконанні функції доїхати на роботу ви стали в
+    // заторі і не попали на роботу. Або йдучи на обід ви забули гаманець і лишились голодні.
+    //
+    //
+    // let money = 0;
+    //
+    // function wakeUp(isWakeUp) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (isWakeUp) {
+    //                 console.log('I am wake up');
+    //                 money = 500;
+    //                 resolve(money);
+    //             } else {
+    //                 console.log(money);
+    //                 reject('I am not wake up')
+    //             }
+    //         }, 2000);
+    //     })
+    // }
+    //
+    //
+    // function eat(isEat) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (money > 200) {
+    //                 money -= 100;
+    //                 console.log('I have already eaten');
+    //                 resolve(money);
+    //             } else {
+    //                 console.log(money);
+    //                 reject('Wrong')
+    //             }
+    //         }, 2000);
+    //     })
+    // }
+    //
+    // function pack(isPack) {
+    //     return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         if (isPack) {
+    //             console.log('I have already packed');
+    //             resolve(money);
+    //         } else {
+    //             console.log(money);
+    //             reject('I am not packing');
+    //             }
+    //         }, 1500);
+    //     })
+    // }
+    //
+    //
+    // function goToWork(isGoToWork) {
+    //     return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         if (isGoToWork) {
+    //             console.log('I am go to work');
+    //             resolve(money);
+    //         } else {
+    //             console.log(money);
+    //             reject('I am not go to work')
+    //             }
+    //         }, 3000)
+    //     })
+    // }
+    // //
+    // function workProcess(isworkProcess) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (isworkProcess) {
+    //                 console.log('I am working');
+    //                 resolve(money);
+    //             } else {
+    //                 console.log(money);
+    //                 reject('I am not working');
+    //             }
+    //         }, 6000)
+    //     })
+    // }
+    // //
+    // function dinner(eatDinner) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (money > 200) {
+    //                 money -=50;
+    //                 console.log('What a great soup');
+    //                 resolve(money);
+    //             } else {
+    //                 console.log(money);
+    //                 reject('I am not eat')
+    //             }
+    //         }, 2000)
+    //     })
+    // }
+    //
+    // function stillWorking(isStillWorking) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (isStillWorking) {
+    //                 console.log('I am still working');
+    //                 resolve(money);
+    //             } else {
+    //                 console.log(money);
+    //                 reject('I am not slill working')
+    //             }
+    //         }, 3000)
+    //     })
+    // }
+    //
+    // function coffee(drinkCoffee) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (money > 50) {
+    //                 money -= 50;
+    //                 console.log('I am drinking coffee');
+    //                 resolve(money);
+    //             } else {
+    //                 console.log(money);
+    //                 reject('I am not drink coffee');
+    //             }
+    //         }, 1000)
+    //     })
+    // }
+    //
+    // function stillStillWorking(isStillStillWorking) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (isStillStillWorking) {
+    //                 money += 50;
+    //                 console.log('I earn 50 dollars');
+    //                 resolve(money);
+    //             } else {
+    //                 console.log(money);
+    //                 reject('I dont earn money');
+    //             }
+    //         }, 2000)
+    //     })
+    // }
+    //
+    // function goHome(goHomeNow) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (goHomeNow) {
+    //                 console.log('Hooray, home');
+    //                 resolve(money);
+    //             } else {
+    //                 reject('Not today');
+    //             }
+    //         }, 3000)
+    //     })
+    // }
+    //
+    // function study(isStudy) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (isStudy) {
+    //                 console.log('A lot of materials for study');
+    //                 resolve(money);
+    //             } else {
+    //                 console.log(money);
+    //                 reject('I am not studied');
+    //             }
+    //         }, 2000)
+    //     })
+    // }
+    //
+    // function sleep(goSleep) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (goSleep) {
+    //                 console.log('Tomorrow will be a hard day');
+    //                 resolve(money);
+    //             } else {
+    //                 console.log(money);
+    //                 reject('Notnot')
+    //             }
+    //         }, 1000)
+    //     })
+    // }
+    //
+    // async function myFunc() {
+    //     let reward;
+    //
+    //     try {
+    //         reward =  await wakeUp(true);
+    //     }
+    //     catch {
+    //         console.log('!!!!!!!!!!!!!!!');
+    //         console.log(err);
+    //         console.log('!!!!!!!!!!!!!!!');
+    //     }
+    //     try {
+    //         reward =  await eat(true);
+    //     }
+    //     catch {
+    //         console.log('!!!!!!!!!!!!!!!');
+    //         console.log(err);
+    //         console.log('!!!!!!!!!!!!!!!');
+    //     }
+    //     try {
+    //         reward =  await pack(true);
+    //     }
+    //     catch {
+    //         console.log('!!!!!!!!!!!!!!!');
+    //         console.log(err);
+    //         console.log('!!!!!!!!!!!!!!!');
+    //     }
+    //     try {
+    //         reward =  await goToWork(true);
+    //     }
+    //     catch {
+    //         console.log('!!!!!!!!!!!!!!!');
+    //         console.log(err);
+    //         console.log('!!!!!!!!!!!!!!!');
+    //     }
+    //     try {
+    //         reward =  await workProcess(true);
+    //     }
+    //     catch {
+    //         console.log('!!!!!!!!!!!!!!!');
+    //         console.log(err);
+    //         console.log('!!!!!!!!!!!!!!!');
+    //     }
+    //     try {
+    //         reward =  await dinner(true);
+    //     }
+    //     catch {
+    //         console.log('!!!!!!!!!!!!!!!');
+    //         console.log(err);
+    //         console.log('!!!!!!!!!!!!!!!');
+    //     }
+    //     try {
+    //         reward =  await stillWorking(true);
+    //     }
+    //     catch {
+    //         console.log('!!!!!!!!!!!!!!!');
+    //         console.log(err);
+    //         console.log('!!!!!!!!!!!!!!!');
+    //     }
+    //     try {
+    //         reward =  await coffee(true);
+    //     }
+    //     catch {
+    //         console.log('!!!!!!!!!!!!!!!');
+    //         console.log(err);
+    //         console.log('!!!!!!!!!!!!!!!');
+    //     }
+    //     try {
+    //         reward =  await stillWorking(true);
+    //     }
+    //     catch {
+    //         console.log('!!!!!!!!!!!!!!!');
+    //         console.log(err);
+    //         console.log('!!!!!!!!!!!!!!!');
+    //     }
+    //     try {
+    //         reward =  await goHome(true);
+    //     }
+    //     catch {
+    //         console.log('!!!!!!!!!!!!!!!');
+    //         console.log(err);
+    //         console.log('!!!!!!!!!!!!!!!');
+    //     }
+    //     try {
+    //         reward =  await study(!true);
+    //     }
+    //     catch {
+    //         console.log('!!!!!!!!!!!!!!!');
+    //         console.log(err);
+    //         console.log('!!!!!!!!!!!!!!!');
+    //     }
+    //     try {
+    //         reward =  await sleep(true);
+    //     }
+    //     catch {
+    //         console.log('!!!!!!!!!!!!!!!');
+    //         console.log(err);
+    //         console.log('!!!!!!!!!!!!!!!');
+    //     }
+    // }
+    // myFunc();
+    // wakeUp(true)
+    //     .then((reward) => {
+    //         console.log(reward);
+    //
+    //         return eat(reward)
+    //     })
+    //     .then(reward1 => {
+    //         console.log(reward1);
+    //
+    //         return pack(reward1)
+    //     })
+    //     .then((reward2) => {
+    //         console.log(reward2);
+    //
+    //         return goToWork(reward2)
+    //     })
+    //     .then((reward3) => {
+    //         console.log(reward3);
+    //
+    //         return workProcess(reward3)
+    //     })
+    //     .then((reward4) => {
+    //         console.log(reward4);
+    //
+    //         return dinner(reward4)
+    //     })
+    //     .then((reward5) => {
+    //         console.log(reward5);
+    //
+    //         return stillWorking(reward5);
+    //     })
+    //     .then((reward6) => {
+    //         console.log(reward6);
+    //
+    //         return coffee(reward6);
+    //     })
+    //     .then((reward7) => {
+    //         console.log(reward7);
+    //
+    //         return stillStillWorking(reward7);
+    //     })
+    //     .then((reward8) => {
+    //     console.log(reward8);
+    //
+    //     return goHome(reward8);
+    //     })
+    //     .then((reward9) => {
+    //         console.log(reward9);
+    //
+    //         return study(reward9);
+    //     })
+    //     .then((reward10) => {
+    //         console.log(reward10);
+    //
+    //         return sleep(reward10);
+    //     })
+    //     .catch(reason => {
+    //         console.log('********************');
+    //         console.log(reason);
+    //         console.log('********************');
+    //     })
+    //     .finally(() => {
+    //         console.log('FINALLY');
+    //     })
+
+
+
+
+
+
+    // let money = 0;
+    //
+    // function wakeUp(isWakeUp, cb) {
+    //     setTimeout(() => {
+    //         if (isWakeUp) {
+    //             console.log('Wake up');
+    //             money = 500;
+    //             cb(null, money);
+    //         } else {
+    //             console.log(money);
+    //             cb('Wake up');
+    //         }
+    //     }, 1000)
+    // }
+    //
+    // function eat(isEat, cb) {
+    //     setTimeout(() => {
+    //         if (money > 200) {
+    //             money -=50;
+    //             console.log('I have already eaten');
+    //             cb(null, money);
+    //         } else {
+    //             cb('Wake up');
+    //         }
+    //     }, 2000)
+    // }
+    //
+    // function pack(isPack, cb) {
+    //     setTimeout(() => {
+    //         if (isPack) {
+    //             console.log('I have already packed');
+    //             cb(null, money);
+    //         } else {
+    //             cb('Pack now');
+    //         }
+    //     }, 1500)
+    // }
+    //
+    // function goToWork(isGoToWork, cb) {
+    //     setTimeout(() => {
+    //         if (isGoToWork) {
+    //             console.log('I am go to work');
+    //             cb(null, money);
+    //         } else {
+    //             cb('Go to work');
+    //             console.log(money);
+    //         }
+    //     }, 3000)
+    // }
+    //
+    // function workProcess(isworkProcess, cb) {
+    //     setTimeout(() => {
+    //         if (isworkProcess) {
+    //             console.log('I am working');
+    //             cb(null, money);
+    //         } else {
+    //             cb('I am lazy');
+    //             console.log(money);
+    //         }
+    //     }, 6000)
+    // }
+    //
+    // function dinner(eantDiner, cb) {
+    //     setTimeout(() => {
+    //         if (money > 200) {
+    //             money -=50;
+    //             console.log('What a great soup');
+    //             cb(null, money);
+    //         } else {
+    //             cb('I will be hungry');
+    //             console.log(money);
+    //         }
+    //     }, 2000)
+    // }
+    //
+    // function stillWorking(isStillWorking, cb) {
+    //     setTimeout(() => {
+    //         if (isStillWorking) {
+    //             console.log('I am still working');
+    //             cb(null, money);
+    //         } else {
+    //             cb('I am not working');
+    //             console.log(money);
+    //         }
+    //     }, 3000)
+    // }
+    //
+    // function coffee(drinkCoffee, cb) {
+    //     setTimeout(() => {
+    //         if (money > 50) {
+    //             money -= 50;
+    //             console.log('I am drinking coffee');
+    //             cb(null, money);
+    //         } else {
+    //             cb('Today without coffee');
+    //             console.log(money);
+    //         }
+    //     }, 1000)
+    // }
+    //
+    // function stillStillWorking(isStillStillWorking, cb) {
+    //     setTimeout(() => {
+    //         if (isStillStillWorking) {
+    //             money += 50;
+    //             console.log('I earn 50 dollars');
+    //             cb(null, money);
+    //         } else {
+    //             cb('Today without money');
+    //             console.log(money);
+    //         }
+    //     }, 2000)
+    // }
+    //
+    // function goHome(goHomeNow, cb) {
+    //     setTimeout(() => {
+    //         if (goHomeNow) {
+    //             console.log('Hooray, home');
+    //             cb(null, money);
+    //         } else {
+    //             cb('Not today');
+    //             console.log(money);
+    //         }
+    //     }, 3000)
+    // }
+    //
+    // function study(isStudy, cb) {
+    //     setTimeout(() => {
+    //         if (isStudy) {
+    //             console.log('A lot of materials for study');
+    //             cb(null, money);
+    //         } else {
+    //             cb('I will study tomorrow');
+    //             console.log(money);
+    //         }
+    //     }, 2000)
+    // }
+    //
+    // function sleep(goSleep, cb) {
+    //     setTimeout(() => {
+    //         if (goSleep) {
+    //             console.log('Tomorrow will be a hard day');
+    //             cb(null, money);
+    //         } else {
+    //             cb('Later');
+    //
+    //         }
+    //     }, 1000)
+    // }
+    //
+    //
+    //
+    // wakeUp(true, (err, reward) => {
+    //     if (err) {
+    //         console.log(err);
+    //     } else {
+    //         console.log(reward);
+    // //
+    //         eat(reward, (err, reward1) => {
+    //             if (err) {
+    //                 console.log(err);
+    //             } else {
+    //                 console.log(reward1);
+    //
+    //                 pack(reward1, (err, reward2) => {
+    //                     if (err) {
+    //                         console.log(err);
+    //                     } else {
+    //                         console.log(reward2);
+    //
+    //                         goToWork(reward2, (err, reward3) => {
+    //                             if (err) {
+    //                                 console.log(err);
+    //                             } else {
+    //                                 console.log(reward3);
+    //
+    //                                 workProcess(reward3, (err, reward4) => {
+    //                                     if (err) {
+    //                                         console.log(err);
+    //                                     } else {
+    //                                         console.log(reward4);
+    //
+    //                                         dinner(reward4, (err,reward5) => {
+    //                                             if (err) {
+    //                                                 console.log(err);
+    //                                             } else {
+    //                                                 console.log(reward5);
+    //
+    //                                                 stillWorking(reward5, (err, reward6) => {
+    //                                                     if (err) {
+    //                                                         console.log(err);
+    //                                                     } else {
+    //                                                         console.log(reward6);
+    //
+    //                                                         coffee(reward6, (err, reward7) => {
+    //                                                             if (err) {
+    //                                                                 console.log(err);
+    //                                                             } else {
+    //                                                                 console.log(reward7);
+    //
+    //                                                                 stillStillWorking(reward7, (err, reward8) => {
+    //                                                                     if (err) {
+    //                                                                         console.log(err);
+    //                                                                     } else {
+    //                                                                         console.log(reward8);
+    //
+    //                                                                         goHome(reward8, (err, reward9) => {
+    //                                                                             if (err) {
+    //                                                                                 console.log(err);
+    //                                                                             } else {
+    //                                                                                 console.log(reward9);
+    //
+    //                                                                                 study(reward9, (err, reward10) => {
+    //                                                                                     if (err) {
+    //                                                                                         console.log(err);
+    //                                                                                     } else {
+    //                                                                                         console.log(reward10);
+    //
+    //                                                                                         sleep(reward10, (err, reward11) => {
+    //                                                                                             if (err) {
+    //                                                                                                 console.log(err);
+    //                                                                                             } else {
+    //                                                                                                 console.log('Till tomorrow))');
+    //                                                                                             }
+    //                                                                                         })
+    //                                                                                     }
+    //                                                                                 })
+    //                                                                             }
+    //                                                                         })
+    //                                                                     }
+    //                                                                 })
+    //                                                             }
+    //                                                         })
+    //                                                     }
+    //                                                 })
+    //                                             }
+    //                                         })
+    //                                     }
+    //                                 })
+    //                             }
+    //                         })
+    //                     }
+    //                 })
+    //             }
+    //         })
+    //     }
+    // })
+
+
+</script>
+</body>
+</html>
