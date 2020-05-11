@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+
+
+<script>
+    // let num = [11, 22, 33, 44, 55];
+    // let names = ['Andriy', 'Petro', 'igor', 'Max', 'Yaroslav'];
+    // let arr = ['Logitech', 84, false, 3.14, 'sky'];
+    //
+    //
+    // let newarr = ['Panasonic', 88, true, 'country', false];
+    // console.log(newarr);
+    // console.log(newarr[0]);
+    // console.log(newarr[1]);
+    // console.log(newarr[2]);
+    // console.log(newarr[3]);
+    // console.log(newarr[4]);
+    //
+    // let arr = [];
+    // arr[0] = 'Andriy';
+    // arr[1] = 'Ivan';
+    // arr[2] = 'Sasha';
+    // arr[3] = 'Igor';
+    // arr[4] = 'Yaroslav';
+    // console.log(arr);
+
+    // for (let i = 0; i < 10; i++) {
+    //     document.write('<div>Text</div>');
+    // }
+    //
+    // for (let i = 0; i < 10; i++) {
+    //     document.write('<div>Text: '+i+'</div>');
+    // }
+
+    // let i = 0;
+    // while (i < 20) {
+    //     document.write('<div>Text</div>');
+    //     i++;
+    // };
+    //
+    // let i = 0;
+    // while (i < 20) {
+    //     document.write('<div>Text: '+i+' </div>');
+    //     i++;
+    // };
+    //
+
+    // let arr = ['Panasonic', 88, true, 'country', false];
+    // console.log(newArr);
+
+
+    // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // for (let i = 0; i < 1; i++) {
+    //     console.log(arr)
+    //     document.write(arr[i]);
+    // };
+    //
+    // let arr = ['Prompt', 'JS', 'C+', 'HTML', 'CSS', 'Github', 'jQuery', 'Kanban', 'Bootstrap', 'Java'];
+    // for (let i = 0; i < 1; i++) {
+    //     console.log(arr)
+    // };
+    //
+    // let arr = ['Car', 12, 'computer', true, 'congarts', 'influent', 3, false, 'windows'];
+    // for (let i = 0; i < 1; i++) {
+    //     console.log(arr)
+    // };
+
+    // let arr = ['Car', 12, 'computer', true, 'congarts', 'influent', 3, false, 'windows'];
+    //
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (typeof arr[i] === 'number') {
+    //         console.log(arr[i]);
+    //     }
+    //     if (typeof arr[i] === 'boolean') {
+    //         console.log(arr[i]);
+    //     }
+    //     if (typeof arr[i] === 'string') {
+    //         console.log(arr[i]);
+    //     }
+    // }
+
+    // let arr = [];
+    // arr[0] = 'Andriy';
+    // arr[1] = 'true';
+    // arr[2] = 3;
+    // arr[3] = false;
+    // arr[4] = 26;
+    // arr[5] = 'dog';
+    // arr[6] = 'boy';
+    // arr[7] = 99;
+    // arr[8] = true;
+    // arr[9] = 111;
+    // console.log(arr);
+    //
+    // for (let i = 0; i < arr.length; i++) {
+    //     console.log(arr[i]);
+    // }
+
+    // for (let i = 0; i < 10; i++) {
+    //     console.log(i);
+    //     document.write(i);
+    //     document.write('<br>');
+    // }
+    //
+    // for (let i = 0; i < 100; i++) {
+    //     console.log(i);
+    //     document.write(i);
+    //     document.write('<br>');
+    // }
+    //
+    // for (let i = 0; i < 200; i = i + 2) {
+    //     console.log(i);
+    //     document.write(i);
+    //     document.write('<br>');
+    // }
+    //
+    // for (let i = 0; i < 100; i++) {
+    //     if (i%2===0) {
+    //         document.write(i);
+    //         document.write('<br>');
+    //         console.log(i);
+    //     }
+    // }
+    //
+    // for (let i = 1; i < 100; i = i + 2) {
+    //
+    //         document.write(i);
+    //         document.write('<br>');
+    //         console.log(i);
+    //     }
+    //
+
+
+    // for (let min = 0; min < 2; min++) {
+    //     for (let sec = 0; sec < 60; sec++) {
+    //         console.log(min, sec);
+    //     }
+    // };
+    //
+    // for (let h = 0; h < 2; h++) {
+    //     for (let min = 0; min < 60; min++) {
+    //         for (let sec = 0; sec < 60; sec++) {
+    //             console.log(h, min, sec);
+    //         }
+    //     }
+    // }
+
+    // let arr = [ 'a', 'b', 'c'];
+    // let str = [];
+    //
+    // for (let i = 0; i < arr.length; i++) {
+    //     document.write(arr[i])
+    // };
+    //
+    // let i = 0
+    // while (i < arr.length) {
+    //     document.write(arr[i]);
+    //     i++
+    // }
+    //
+    // for (let string of arr) {
+    //     str = str + string;
+    // }
+    //
+    // console.log(str);
+
+    // let arr = [ 'a', 'b', 'c'];
+    //
+    // for (let i = 1; i < 4; i++) {
+    //     arr.push(i);
+    // }
+    // console.log(arr);
+
+
+
+    // let arr = [1, 2, 3];
+    //
+    // let newArr = arr.reverse();
+    // console.log(arr);
+    //
+    // let arr = [1, 2, 3];
+    //
+    // for (let i = 4; i < 7; i++) {
+    //     arr.push(i);
+    // }
+    // console.log(arr);
+    //
+    // let arr = [1, 2, 3];
+    //
+    // for (let i = 6; i >=4; i--) {
+    //     arr.unshift(i);
+    // }
+    // console.log(arr);
+
+
+    // let arr = ['js', 'css', 'jq'];
+    //
+    // let first = arr.shift();
+    // document.write(first);
+    // console.log(first);
+    //
+    // let first = arr.pop();
+    // document.write(first);
+
+
+    // let arr = [1, 2, 3, 4, 5];
+    //  console.log(arr.slice(3));
+    //
+    //
+    // let arr = [1, 2, 3, 4, 5];
+    // console.log(arr.slice(0, 2));
+
+    // let arr = [1, 2, 3, 4, 5];
+    //
+    // arr.splice(1, 2);
+    // console.log(arr);
+    //
+    // arr.splice(3, 0, 'a', 'b', 'c')
+    // console.log(arr);
+    //
+    // arr.splice(1, 0, 'a', 'b');
+    // arr.splice(6,0, 'c')
+    // arr.splice(8,0, 'e')
+    // console.log(arr);
+    //
+
+    // let arr = [2,17,13,6,22,31,45,66,100,-18];
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i]%2===0) {
+    //         console.log(arr[i]);
+    //     }
+    //
+    // }
+    //
+    // let arr = [2,17,13,6,22,31,45,66,100,-18];
+    // let newArr = [];
+    // for (let i = 0; i < arr.length; i++) {
+    //     newArr.push(arr[i])
+    // }
+    // console.log(newArr);
+    //
+    // let arr = [2,17,13,6,22,31,45,66,100,-18];
+    // let newArr = [];
+    // for (let i = 0; i < arr.length; i++) {
+    //     newArr[i]=arr[i];
+    // }
+    // console.log(newArr);
+    //
+
+    // let arr = [2,17,13,6,22,31,45,66,100,-18];
+    // let i = 0;
+    // while (i < arr.length) {
+    //     document.write(arr[i]);
+    //     document.write('<br>');
+    //     console.log(arr[i]);
+    //     i++
+    // }
+    //
+    // let arr = [2,17,13,6,22,31,45,66,100,-18];
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i]%3 === 0) {
+    //         arr[i] = 'okten';
+    //     }
+    // }
+    //
+    // console.log(arr);
+
+    // let random = Math.ceil([Math.random()] * (732 - 8) + 8);
+    // document.write(random);
+
+    // let arr = [2,17,13,6,22,31,45,66,100,-18];
+    // for (let i = 0; i < arr.length; i = i + 3) {
+    //     if (i%2 ===0) {
+    //         console.log(i);
+    //     }
+    // }
+
+    // let arr = [];
+    // for (let i = 0; i < 10; i++) {
+    //     arr[i] =  Math.floor([Math.random()] * (732 - 8) + 8);
+    // }
+    // console.log(arr);
+    // let newArr = [];
+    // for (let i = 0; i < arr.length; i++) {
+    //     newArr[i] = arr[i]*5
+    // }
+    // console.log(newArr);
+</script>
+</body>
+</html>
