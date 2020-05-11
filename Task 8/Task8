@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- - Дана textarea.-->
+<!--В неё вводится текст.-->
+<!--Сделайте так, чтобы после захода на эту страницу через некоторое время, введенный текст остался в textarea.-->
+<textarea id="comment"></textarea>
+
+<!-- - Дана форма с инпутами, текстареа, чекбоксами, радио кнопочками, селектами и тп.-->
+<!--Пользователь вводит какие-то данные и закрывает страницу (не факт, что он заполнил всю форму).-->
+<!--Сделайте так, чтобы при следующем заходе на страницу введенные им ранее данные стояли на своих местах.-->
+<!--Сделайте ваш скрипт как можно более универсальным.-->
+<!--<form id="mainForm">-->
+<!--    <input name="first">-->
+<!--    <select name="third">-->
+<!--        <option>Перше значення</option>-->
+<!--        <option>Друге значення</option>-->
+<!--    </select>-->
+<!--    <div>-->
+<!--        <input type="radio" id="rad1" name="contact" value="name1">-->
+<!--        <label for="rad1">Сергій</label>-->
+
+<!--        <input type="radio" id="rad2" name="contact" value="name2">-->
+<!--        <label for="rad2">Ярослав</label>-->
+
+<!--        <input type="radio" id="rad3" name="contact" value="name3">-->
+<!--        <label for="rad3">Віталік</label>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--        <input type="checkbox" id="check1" name="checkbox1" value="name1">-->
+<!--        <label for="check1">Іван</label>-->
+
+<!--        <input type="checkbox" id="check2" name="checkbox2" value="name2">-->
+<!--        <label for="check2">Саша</label>-->
+
+<!--        <input type="checkbox" id="check3" name="checkbox3" value="name3">-->
+<!--        <label for="check3">Петро</label>-->
+<!--    </div>-->
+<!--</form>-->
+
+
+<!-- -Дан текстареа. В него можно ввести данные, нажать кнопку "сохранить" и они "фикисруются" (в хранилище), затем поредактировать их, затем еще поредактировать и возможно еще.....-->
+<!--Требование : хранить историю своих изменений (даже после перезагрузки страницы).-->
+<!--Сверху над текстареа должны появится стрелочки, с помощью которых можно перемещаться по истории (не забудьте!чекпоинт истории - нажатеи кнопки сохранить).-->
+<!--<form action="#" name="mainForm">-->
+<!--    <p>-->
+<!--        <textarea name="comments" ></textarea>-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="button" name="save" value="Save">-->
+<!--    </p>-->
+<!--</form>-->
+<!-- - Реализуйте записную книгу, хранящую данные в локальном хранилище.-->
+<!--Данные которые надо сохранять : ФИО, номер, почта, фирма, отдел, день рождения-->
+<!--Данные вводить через соответсвующую форму.-->
+<!--&#45;&#45;Каждому контакту добавить кнопку для удаления контакта.-->
+<!--&#45;&#45;Каждому контакту добавить кнопку редактироваиня. При нажати на нее появляется форма, в которой есть все необходимые инпуты для редактирования, которые уже заполнены данными объекта-->
+<!--<form action="#" name="mainForm">-->
+<!--    <p>-->
+<!--        <input type="text" name="name" placeholder="Ім'я">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="text" name="surname" placeholder="Прізвище">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="text" name="patronymic" placeholder="По-батькові">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="tel" name="phone" placeholder="Контактний телефон">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="email" name="email" placeholder="Пошта">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="text" name="firm" placeholder="Фірма">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="text" name="department" placeholder="Відділ">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="date" name="birthday" placeholder="День народження">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="button" name="btnCreateContact" value="Створити">-->
+<!--    </p>-->
+<!--</form>-->
+
+<!--<fieldset>-->
+<!--    <legend>MyForm</legend>-->
+<!--    <form action=""id="form1">-->
+<!--        <label>FIO</label>-->
+<!--        <br>-->
+<!--        <input type="text" name="fio">-->
+<!--        <br>-->
+<!--        <label>Phone</label>-->
+<!--        <br>-->
+<!--        <input type="text" name="phone">-->
+<!--        <br>-->
+<!--        <label>mail</label>-->
+<!--        <br>-->
+<!--        <input type="text" name="mail">-->
+<!--        <br>-->
+<!--        <label>Firm</label>-->
+<!--        <br>-->
+<!--        <input type="text" name="firm">-->
+<!--        <br>-->
+<!--        <label>DN</label>-->
+<!--        <br>-->
+<!--        <input type="text" name="fio">-->
+<!--        <br>-->
+<!--        <label>depart</label>-->
+<!--        <br>-->
+<!--        <input type="text" name="depart">-->
+<!--    </form>-->
+<!--</fieldset>-->
+
+<!--<div id="content"></div>-->
+
+
+
+
+
+<!--<form action="#" name="formFour">-->
+<!--    <p>-->
+<!--        <input type="text" name="name" placeholder="Name">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="text" name="surname" placeholder="Surname">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="text" name="patronymic" placeholder="Patronymic">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="tel" name="phone" placeholder="Phone">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="email" name="email" placeholder="Email">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="text" name="firm" placeholder="Firm">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="text" name="department" placeholder="Department">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="text" name="birthday" placeholder="Birthday">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="button" name="btnCreateContact" value="Create contact">-->
+<!--    </p>-->
+<!--</form>-->
+
+
+
+
+
+
+
+
+<script>
+    // - Дана textarea.
+    //     В неё вводится текст.
+    //     Сделайте так, чтобы после захода на эту страницу через некоторое время, введенный текст остался в textarea.
+    //
+    // const textArea = document.querySelector('textarea');
+    // textArea.value = localStorage.getItem(textArea.id);
+    // textArea.onchange = function(event) {
+    //     localStorage.setItem(event.target.id, event.target.value);
+    // };
+
+
+    //
+    // - Дана форма с инпутами, текстареа, чекбоксами, радио кнопочками, селектами и тп.
+    //     Пользователь вводит какие-то данные и закрывает страницу (не факт, что он заполнил всю форму).
+    // Сделайте так, чтобы при следующем заходе на страницу введенные им ранее данные стояли на своих местах.
+    //     Сделайте ваш скрипт как можно более универсальным.
+    // const ds = document.forms[0];
+    // ds.onchange = () => {
+    //     let json = JSON.stringify(Array.from(new FormData(ds)));
+    //     localStorage.setItem(ds.id, json);
+    // };
+    // document.addEventListener("DOMContentLoaded", () => {
+    //     let values = JSON.parse(localStorage.getItem(ds.id));
+    //     for (let i = 0; i < values.length; ++i) {
+    //         let el = ds[values[i][0]];
+    //         if (el.type == "checkbox")
+    //             el.setAttribute("checked", "");
+    //         else
+    //             el.value = values[i][1];
+    //     }
+    //
+    // });
+
+
+    // -Дан текстареа. В него можно ввести данные, нажать кнопку "сохранить" и они "фикисруются" (в хранилище), затем поредактировать их, затем еще поредактировать и возможно еще.....
+    // Требование : хранить историю своих изменений (даже после перезагрузки страницы).
+    // Сверху над текстареа должны появится стрелочки, с помощью которых можно перемещаться по истории (не забудьте!чекпоинт истории - нажатеи кнопки сохранить).
+
+    // const mainForm = document.forms.mainForm;
+    // const com = mainForm.comments;
+    // const btnSave = mainForm.save;
+    //
+    // const buttonL = document.createElement('button');
+    // buttonL.id = 'buttonLeft';
+    // buttonL.textContent = '<<';
+    //
+    // const buttonR = document.createElement('button');
+    // buttonR.id = 'buttonUp';
+    // buttonR.textContent = '>>';
+    //
+    // const div = document.createElement('div');
+    // div.append(buttonL,buttonR);
+    // div.hidden = true;
+    // mainForm.prepend(div); // appenchild вставляє дві стрілки в кінець, а prepend перед стрілочками
+    //
+    // let index = 0; // індекс для стрілок
+    // if (localStorage.getItem('smth')) {
+    //     const smth = JSON.parse(localStorage.getItem('smth')); // parse, not stringify
+    //     com.value = smth[smth.length-1].comment; // smth.length-1 дає можливість зберігати значення в textarea
+    //     index = smth.length-1; // поточний індекс = індексу останнього  коментаря в масиві, стрілка вправо показує останній комент
+    // }
+    //
+    //
+    // btnSave.addEventListener('click', e => {
+    //     if (div.hidden) div.hidden = false;
+    //     if (!localStorage.getItem('smth') && com.value.length) {
+    //         let smth = [];
+    //         smth.push({comment:com.value});
+    //         localStorage.setItem('smth', JSON.stringify(smth)); // додаємо smth в local storage
+    //     }
+    //     else {
+    //         if (!com.value.length) return;
+    //         let smth = JSON.parse(localStorage.getItem('smth'));
+    //         smth.push({comment:com.value});
+    //         localStorage.setItem('smth', JSON.stringify(smth));
+    //         index = smth.length-1; // дає змогу зберігати декілька значень, додаємо до однієї кнопки декілька подій
+    //     }
+    // });
+    //
+    // buttonL.addEventListener('click', e => {
+    //     const smth = JSON.parse(localStorage.getItem('smth'));
+    //     index--;
+    //     if (index < 0) index = 0;
+    //     com.value = smth[index].comment;
+    //
+    //     e.preventDefault();
+    // });
+    //
+    // buttonR.addEventListener('click', e => {
+    //     const smth = JSON.parse(localStorage.getItem('smth'));
+    //     index++;
+    //     if (index > JSON.parse(localStorage.getItem('smth')).length-1) index = JSON.parse(localStorage.getItem('smth')).length-1;
+    //     com.value = smth[index].comment;
+    //
+    //     e.preventDefault();
+    // });
+
+
+
+    //
+    // - Реализуйте записную книгу, хранящую данные в локальном хранилище.
+    //     Данные которые надо сохранять : ФИО, номер, почта, фирма, отдел, день рождения
+    // Данные вводить через соответсвующую форму.
+    // --Каждому контакту добавить кнопку для удаления контакта.
+    // // --Каждому контакту добавить кнопку редактироваиня. При нажати на нее появляется форма, в которой есть все необходимые инпуты для редактирования, которые уже заполнены данными объекта
+    // const ARRAY USERS = 'ARRAY USERS';
+    // let tenpUser = {};
+    // let content = document.getElementById('content')
+    //
+    // let form1 = document.forms.form1;
+    //
+    // form1.submit1.onclick = ev => {
+    //     // ev.preventDefault()
+    //     let person = {...tenpUser};
+    //     for (let i = 0; i < form1.children.length; i++) {
+    //         const form1Element = form1.children[i];
+    //         if (form1Element.name && form1Element.type !== 'submit' ){
+    //             person[form1Element.name] = form1Element.value;
+    //         }
+    //
+    //     }
+    //     if (!person.id) {
+    //         person.id = new Date().getTime();}
+    //     tenpUser{};
+    //     console.log('person');
+    //     console.log(person);
+    //     saveUser(person);
+    // }
+    // getDataFromLSt()
+    //
+    // function saveUser(user) {
+    //     if (localStorage.hasOwnProperty(ARRAY_USERS)) {
+    //         const arrayUsers = JSON.parse(localStorage.getItem(ARRAY_USERS));
+    //         const find = arrayUsers.find(value => value.id === user.id);
+    //         if (find) {
+    //             let filter = arrayUsers.filter(value => value.id !== user.id);
+    //             filter.push(user);
+    //             localStorage.setItem(ARRAY_USERS, JSON,stringify(filter))
+    //
+    //         } else {
+    //             arrayUsers.push(user);
+    //             localStorage.setItem(ARRAY_USERS, JSON.stringify(arrayUsers));
+    //         }
+    //     }else {
+    //         localStorage.setItem(ARRAY_USERS, JSON.stringify[user])
+    //     }
+    // }
+    // function getDataFromLSt() {
+    //     if (localStorage.hasOwnProperty(ARRAY_USERS)) {
+    //        const arrUser = JSON.parse(localStorage.getItem(ARRAY_USERS));
+    //         for (const user of arrUser) {
+    //             console.log(user);
+    //         }
+    //     }
+    // }
+    // function createDivPerson(user) {
+    //     let main = document.createElement('div');
+    //     let flag = true;
+    //     for (const key in user) {
+    //         if (flag) {
+    //             let h3 = document.createElement('h3');
+    //             h3.innerText = key + " : " + user[key];
+    //             main.appendChild(h3);
+    //         }else {
+    //             let p = document.createElement('p');
+    //             p.innerText = key + " : " + user[key];
+    //             main.appendChild(p
+    //         }
+    //     }
+    //     main.style = 'width : 300px; border: red 1px solid; float : left';
+    //     let b1 = document.createElement('button');
+    //     let b2 = document.createElement('button');
+    //     b1.innerText = 'Edit';
+    //     b2.innerText = 'Delete';
+    //     b1.onclick = function() {
+    //         editUser(user.id);
+    //     }
+    //     b2.onclick = function() {
+    //         deleteUser(user.id);
+    //     }
+    //     main.appendChild(b1);
+    //     main.appendChild(b2);
+    //
+    //     return main;
+    // }
+    //
+    //
+    // function deleteUser(id) {
+    //     localStorage.getItem(ARRAY_USERS)
+    //     let parse = JSON.parse(localStorage.getItem(ARRAY_USERS));
+    //     let filter = parse.filter(user => user.id !==id)
+    //     localStorage.setItem(ARRAY_USERS, JSON.stringify(filter))
+    //     location.reload();
+    // }
+    //
+    // function editUser(id) {
+    //     let parse = JSON.parse(localStorage.getItem(ARRAY_USERS));
+    //     let user = parse.find(user => user.id === id);
+    //
+    //     for (let i = 0; i < form1.children.length; i++) {
+    //         const form1Element = form1.children[i];
+    //         if (form1Element.name && form1Element.type !== 'submit' ){
+    //             for (const key in user) {
+    //                 if (form1Element.name === key) {
+    //                     form1Element.value == user[key]
+    //                 }
+    //             }
+    //         }
+    //
+    //     }
+    //     tenpUser = user;
+    //
+    //
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Не моє рішення
+    // const formFour = document.forms.formFour;
+    // const btnCreateContact = formFour.btnCreateContact;
+    // const contactsContainer = document.createElement('div');
+    // document.body.append(contactsContainer);
+    //
+    // // если хранилище существует
+    // if (JSON.parse(localStorage.getItem('contacts'))) {
+    //     let contacts = JSON.parse(localStorage.getItem('contacts'));
+    //
+    //     for (const contact of contacts) {
+    //         createContact(contact, contactsContainer);
+    //     }
+    // }
+    //
+    // btnCreateContact.addEventListener('click', e => {
+    //     let contact = {};
+    //
+    //     for (const input of formFour.querySelectorAll('[name]')) {
+    //         if (input.type === 'button') continue;
+    //         contact[input.name] = input.value;
+    //     }
+    //     //если хранилище не создано то создать
+    //     if (!JSON.parse(localStorage.getItem('contacts'))) {
+    //         let contacts = [];
+    //         localStorage.setItem('contacts', JSON.stringify(contacts));
+    //     }
+    //
+    //     //получить хранилище
+    //     let contacts = JSON.parse(localStorage.getItem('contacts'));
+    //     contacts.push(contact);
+    //     localStorage.setItem('contacts', JSON.stringify(contacts));
+    //
+    //     createContact(contact, contactsContainer);
+    // });
+    //
+    // function createContact(contact, contactsContainer) {
+    //     const div = document.createElement('div');
+    //     const span = document.createElement('span');
+    //     const btnRemove = document.createElement('button');
+    //     const btnEdit = document.createElement('button');
+    //
+    //     span.textContent = JSON.stringify(contact);
+    //     btnRemove.textContent = 'Delete';
+    //     btnEdit.textContent = 'Edit';
+    //
+    //     div.append(span, btnEdit, btnRemove);
+    //     contactsContainer.append(div);
+    //
+    //     btnRemove.addEventListener('click', e => {
+    //         //удалить из хранилища контактов
+    //         let contacts = JSON.parse(localStorage.getItem('contacts'));
+    //         let index = contacts.findIndex(user => JSON.stringify(user) === JSON.stringify(contact));
+    //         contacts.splice(index, 1);
+    //         localStorage.setItem('contacts', JSON.stringify(contacts));
+    //         //удалить со страницы
+    //         btnRemove.parentNode.remove();
+    //     });
+    //
+    //     btnEdit.addEventListener('click', e => {
+    //         //создать форму
+    //         let formClone = formFour.cloneNode(true);
+    //         let cloneBtnChange = formClone.btnCreateContact;
+    //         cloneBtnChange.name = 'btnChangeContact';
+    //         cloneBtnChange.value = 'Change';
+    //
+    //         let btnClose = document.createElement('input');
+    //         btnClose.type = 'button';
+    //         btnClose.name = 'hide';
+    //         btnClose.value = 'Hide form';
+    //         //вставить сохраненные значения
+    //         for (const input of formClone.querySelectorAll('[name]')) {
+    //             if (input.type === 'button') continue;
+    //             input.value = contact[input.name];
+    //         }
+    //
+    //         formClone.lastElementChild.append(btnClose)
+    //         btnEdit.parentNode.append(formClone);
+    //
+    //         btnClose.addEventListener('click', e => {
+    //             formClone.hidden = true;
+    //         });
+    //
+    //         cloneBtnChange.addEventListener('click', e => {
+    //             let changeContact = {};
+    //
+    //             for (const input of formClone.querySelectorAll('[name]')) {
+    //                 if (input.type === 'button') continue;
+    //                 changeContact[input.name] = input.value;
+    //             }
+    //             //замена в хранилище
+    //             //найти текущий contact в хранилище и заменить его на changeContact
+    //             let contacts = JSON.parse(localStorage.getItem('contacts'));
+    //             let index = contacts.findIndex(user => JSON.stringify(user) === JSON.stringify(contact));
+    //             contacts.splice(index, 1, changeContact);
+    //             localStorage.setItem('contacts', JSON.stringify(contacts));
+    //             //замена
+    //             span.textContent = JSON.stringify(changeContact);
+    //         });
+    //     });
+    // }
+
+</script>
+</body>
+</html>
