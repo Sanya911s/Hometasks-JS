@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    // ==============================================
+    //     -  Створити функцію конструктор для об'єкту який описує теги
+    // Властивості
+    // -назва тегу
+    // - опис його дій
+    // - масив з атрибутами (2-3 атрибути максимум)
+    //
+    //
+    // function Image(name, info, atributes = []) {
+    //     this.name = name;
+    //     this.info = info;
+    //     this.atributes = atributes;
+    // }
+    // let img = new Image('img', 'put the image into html-document', ['src', 'alt']);
+    // console.log(img);
+
+
+
+
+
+
+    // Кожен атрибут описати як окремий який буде містити
+    // -назву атрибуту
+    // -опис дії атрибуту
+    // інформацію брати з htmlbook.ru
+    //
+    // Таким чином описати теги
+
+
+    // // -a
+    // function tagA(titleOfTag, action, attrs = []) {
+    //     this.titleOfTag = titleOfTag;
+    //     this.action = action;
+    //     this.attrs = attrs;
+    // }
+    //
+    // let newTagA = new tagA('a', 'Тег <a> является одним из важных элементов HTML и предназначен для создания ссылок...',  [{titleOfAttr: 'href', actionOfAttr: 'Задает адрес документа, на который следует перейти.'},
+    //  {titleOfAttr: 'name', actionOfAttr: 'Устанавливает имя якоря внутри документа.'}, {titleOfAttr: 'type', actionOfAttr: 'Указывает MIME-тип документа, на который ведёт ссылка.'}]);
+    // console.log(newTagA);
+
+    // -div
+    // function tagDiv(titleOfTag, action, attrs = []) {
+    //     this.titleOfTag = titleOfTag;
+    //     this.action = action;
+    //     this.attrs = attrs;
+    // }
+    //
+    // let tagDiv1 = new tagDiv('div', 'Элемент <div> является блочным элементом и предназначен для выделения фрагмента документа с целью изменения вида содержимого...',
+    //     [{titleOfAttr: 'title', actionOfAttr: 'Добавляет всплывающую подсказку к содержимому.'},{titleOfAttr: 'align', actionOfAttr: 'Задает выравнивание содержимого тега <div>.'}])
+    // console.log(tagDiv1);
+
+    // // -h1
+    // function tagH1(titleOfTag, action, attrs = []) {
+    //     this.titleOfTag = titleOfTag;
+    //     this.action = action;
+    //     this.attrs = attrs;
+    // }
+    //
+    // let tagH1New = new tagH1('h1', 'Tег <h1> представляет собой наиболее важный заголовок первого уровня, а тег <h6> служит для обозначения заголовка шестого уровня и является наименее значительным...',
+    //     [{titleOfAttr: 'align', actionOfAttr: 'Определяет выравнивание заголовка.'},{titleOfAttr: 'id', actionOfAttr: 'Указывает имя стилевого идентификатора.'}]);
+    // console.log(tagH1New);
+
+    // // -span
+    // function tagSpan(titleOfTag, action, attrs = []) {
+    //     this.titleOfTag = titleOfTag;
+    //     this.action = action;
+    //     this.attrs = attrs;
+    // }
+    //
+    // let tagSpan1 = new tagSpan('span', 'Тег <span> предназначен для определения строчных элементов документа...', [{titleOfAttr: 'title', actionOfAttr: 'Описывает содержимое элемента в виде всплывающей подсказки.'},
+    //     {titleOfAttr: 'style', actionOfAttr: 'Применяется для определения стиля элемента с помощью правил CSS.'},
+    //     {titleOfAttr: 'id', actionOfAttr: 'Указывает имя стилевого идентификатора.'}]);
+    // console.log(tagSpan1);
+
+
+
+    // // -input
+    // function tagInput(titleOfTag, action, attrs = []) {
+    //     this.titleOfTag = titleOfTag;
+    //     this.action = action;
+    //     this.attrs = attrs;
+    // }
+    //
+    // let tagInput1 = new tagInput('input', 'Тег <input> является одним из разносторонних элементов формы и позволяет создавать разные элементы интерфейса...',
+    //     [{titleOfAttr: 'accesskey', actionOfAttr: 'Переход к элементу с помощью комбинации клавиш.'},
+    //     {titleOfAttr: 'form', actionOfAttr: 'Связывает поле с формой по её идентификатору.'},
+    //     {titleOfAttr: 'min', actionOfAttr: 'Нижнее значение для ввода числа или даты.'}]);
+    //     console.log(tagInput1);
+
+    // -form
+    // function tagForm(titleOfTag, action, attrs = []) {
+    //     this.titleOfTag = titleOfTag;
+    //     this.action = action;
+    //     this.attrs = attrs;
+    // }
+    //
+    // let tagForm1 = new tagForm('form', 'Связывает поле с формой по её идентификатору...',
+    //     [{titleOfAttr: 'id', actionOfAttr: 'Указывает имя стилевого идентификатора.'},
+    //     {titleOfAttr: 'class', actionOfAttr: 'Определяет имя класса, которое позволяет связать тег со стилевым оформлением.'}]);
+    // console.log(tagForm1);
+
+
+    // -option
+    // function tagOption(titleOfTag, action, attrs = []) {
+    //     this.titleOfTag = titleOfTag;
+    //     this.action = action;
+    //     this.attrs = attrs;
+    // }
+    //
+    // let tagOption1 = new tagOption('option', 'Тег <option> определяет отдельные пункты списка, создаваемого с помощью контейнера <select>...',
+    //     [{titleOfAttr: 'disabled', actionOfAttr: 'Заблокировать для доступа элемент списка.'},
+    //     {titleOfAttr: 'label', actionOfAttr: 'Указание метки пункта списка.'}]);
+    // console.log(tagOption1);
+
+
+    // -select
+    // function tagSelect(titleOfTag, action, attrs = []) {
+    //     this.titleOfTag = titleOfTag;
+    //     this.action = action;
+    //     this.attrs = attrs;
+    // }
+    //
+    // let tagSelect1 = new tagSelect('select', 'Тег <select> позволяет создать элемент интерфейса в виде раскрывающегося списка...',
+    //     [{titleOfAttr: 'accesskey', actionOfAttr: 'Позволяет перейти к списку с помощью некоторого сочетания клавиш.'},
+    //     {titleOfAttr: 'multiple', actionOfAttr: 'Позволяет одновременно выбирать сразу несколько элементов списка.'}]);
+    // console.log(tagSelect1);
+
+
+
+
+
+    // Приклад результату
+    // {
+    //     titleOfTag: 'area',
+    //         action: `Каждый элемент <area> определяет активные области изображения, которые являются ссылками...`,
+    //     attrs: [
+    //     {titleOfAttr: 'accesskey', actionOfAttr: 'Переход к области с помощью комбинации клавиш'},
+    //     {/*some props and values*/},
+    //     {/*...*/},
+    //     {/*...*/},
+    // ]
+    //
+    // }
+    // ==============================================
+    //
+    //
+    // ==============================================
+    //     -  Створити класс  для об'єкту який описує теги
+    // Властивості
+    // -назва тегу
+    // - опис його дій
+    // - масив з атрибутами (2-3 атрибути максимум)
+    // Кожен атрибут описати як окремий який буде містити
+    // -назву атрибуту
+    // -опис дії атрибуту
+    // інформацію брати з htmlbook.ru
+    //
+    // Таким чином описати теги
+
+
+    // // -a
+    // class aTag{
+    //     constructor(titleOfTag, action, attrs = []) {
+    //         this.titleOfTag = titleOfTag;
+    //         this.action = action;
+    //         this.attrs = attrs;
+    //     }
+    //
+    // }
+    // let aTag1 = new aTag('a', 'Тег <a> является одним из важных элементов HTML и предназначен для создания ссылок...', [{titleOfAttr: 'href', actionOfAttr: 'Задает адрес документа, на который следует перейти.'},
+    //     {titleOfAttr: 'name', actionOfAttr: 'Устанавливает имя якоря внутри документа.'}, {titleOfAttr: 'type', actionOfAttr: 'Указывает MIME-тип документа, на который ведёт ссылка.'}])
+    // console.log(aTag1);
+
+
+
+    // -div
+    // class divTag{
+    //     constructor(titleOfTag, action, attrs = []) {
+    //         this.titleOfTag = titleOfTag;
+    //         this.action = action;
+    //         this.attrs = attrs;
+    //     }
+    //
+    // }
+    // let divTag1 = new divTag('div', 'Элемент <div> является блочным элементом и предназначен для выделения фрагмента документа с целью изменения вида содержимого...',
+    //         [{titleOfAttr: 'title', actionOfAttr: 'Добавляет всплывающую подсказку к содержимому.'},
+    //         {titleOfAttr: 'align', actionOfAttr: 'Задает выравнивание содержимого тега <div>.'}]);
+    //         console.log(divTag1);
+
+    // -h1
+    // class h1Tag{
+    //     constructor(titleOfTag, action, attrs = []) {
+    //         this.titleOfTag = titleOfTag;
+    //         this.action = action;
+    //         this.attrs = attrs;
+    //     }
+    //
+    // }
+    // let h1Tag1 = new h1Tag('h1', 'Tег <h1> представляет собой наиболее важный заголовок первого уровня, а тег <h6> служит для обозначения заголовка шестого уровня и является наименее значительным...',
+    //     [{titleOfAttr: 'align', actionOfAttr: 'Определяет выравнивание заголовка.'},
+    //     {titleOfAttr: 'id', actionOfAttr: 'Указывает имя стилевого идентификатора.'}]);
+    //     console.log(h1Tag1);
+
+    // -span
+    // class spanTag{
+    //     constructor(titleOfTag, action, attrs = []) {
+    //         this.titleOfTag = titleOfTag;
+    //         this.action = action;
+    //         this.attrs = attrs;
+    //     }
+    //
+    // }
+    // let spanTag1 = new spanTag('h1', 'Tег <h1> представляет собой наиболее важный заголовок первого уровня, а тег <h6> служит для обозначения заголовка шестого уровня и является наименее значительным...',
+    //     [{titleOfAttr: 'title', actionOfAttr: 'Описывает содержимое элемента в виде всплывающей подсказки.'},
+    //     {titleOfAttr: 'style', actionOfAttr: 'Применяется для определения стиля элемента с помощью правил CSS.'},
+    //     {titleOfAttr: 'id', actionOfAttr: 'Указывает имя стилевого идентификатора.'}]);
+    //     console.log(spanTag1);
+
+    // -input
+    // class inputTag{
+    //     constructor(titleOfTag, action, attrs = []) {
+    //         this.titleOfTag = titleOfTag;
+    //         this.action = action;
+    //         this.attrs = attrs;
+    //     }
+    //
+    // }
+    // let inputTag1 = new inputTag('h1', 'Tег <h1> представляет собой наиболее важный заголовок первого уровня, а тег <h6> служит для обозначения заголовка шестого уровня и является наименее значительным...',
+    //     [{titleOfAttr: 'accesskey', actionOfAttr: 'Переход к элементу с помощью комбинации клавиш.'},
+    //     {titleOfAttr: 'form', actionOfAttr: 'Связывает поле с формой по её идентификатору.'},
+    //     {titleOfAttr: 'min', actionOfAttr: 'Нижнее значение для ввода числа или даты.'}]);
+    //     console.log(inputTag1);
+
+    // -form
+    // class formTag{
+    //     constructor(titleOfTag, action, attrs = []) {
+    //         this.titleOfTag = titleOfTag;
+    //         this.action = action;
+    //         this.attrs = attrs;
+    //     }
+    //
+    // }
+    // let formTag1 = new formTag('h1', 'Tег <h1> представляет собой наиболее важный заголовок первого уровня, а тег <h6> служит для обозначения заголовка шестого уровня и является наименее значительным...',
+    //     [{titleOfAttr: 'id', actionOfAttr: 'Указывает имя стилевого идентификатора.'},
+    //     {titleOfAttr: 'class', actionOfAttr: 'Определяет имя класса, которое позволяет связать тег со стилевым оформлением.'}]);
+    // console.log(formTag1);
+
+    // -option
+    // class optionTag{
+    //     constructor(titleOfTag, action, attrs = []) {
+    //         this.titleOfTag = titleOfTag;
+    //         this.action = action;
+    //         this.attrs = attrs;
+    //     }
+    //
+    // }
+    // let optionTag1 = new optionTag('h1', 'Tег <h1> представляет собой наиболее важный заголовок первого уровня, а тег <h6> служит для обозначения заголовка шестого уровня и является наименее значительным...',
+    //     [{titleOfAttr: 'disabled', actionOfAttr: 'Заблокировать для доступа элемент списка.'},
+    //     {titleOfAttr: 'label', actionOfAttr: 'Указание метки пункта списка.'}]);
+    //     console.log(optionTag1);
+
+    // -select
+    // class selectTag{
+    //     constructor(titleOfTag, action, attrs = []) {
+    //         this.titleOfTag = titleOfTag;
+    //         this.action = action;
+    //         this.attrs = attrs;
+    //     }
+    //
+    // }
+    // let selectTag1 = new selectTag('h1', 'Tег <h1> представляет собой наиболее важный заголовок первого уровня, а тег <h6> служит для обозначения заголовка шестого уровня и является наименее значительным...',
+    //     [{titleOfAttr: 'accesskey', actionOfAttr: 'Позволяет перейти к списку с помощью некоторого сочетания клавиш.'},
+    //     {titleOfAttr: 'multiple', actionOfAttr: 'Позволяет одновременно выбирать сразу несколько элементов списка.'}]);
+    // console.log(selectTag1);
+
+    // Приклад результату
+    // {
+    //     titleOfTag: 'area',
+    //         action: `Каждый элемент <area> определяет активные области изображения, которые являются ссылками...`,
+    //     attrs: [
+    //     {titleOfAttr: 'accesskey', actionOfAttr: 'Переход к области с помощью комбинации клавиш'},
+    //     {/*some props and values*/},
+    //     {/*...*/},
+    //     {/*...*/},
+    // ]
+    //
+    // }
+    // ==============================================
+    //
+    //
+    //
+    // ==============================================
+    //     - Створити об'єкт car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+    // -- drive () - яка виводить в консоль "їдемо зі швидкістю {максимальна швидкість} на годину"
+    // -- info () - яка виводить всю інформацію про автомобіль
+    // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+    // -- changeYear (newValue) - змінює рік випуску на значення newValue
+
+    // let car = {
+    //     model: 'Ford',
+    //     generator: 'USA',
+    //     year: 2018,
+    //     maxSpeed: 280,
+    //     engine: 2,
+    //     info: function () {
+    //         console.log(car);
+    //     },
+    //     drive: function () {
+    //         console.log(`Їдемо зі швидкістю ${this.maxSpeed} на годину`);
+    //     },
+    //
+    //     increaseMaxSpeed: function () {
+    //         let newSpeed = 30;
+    //         console.log(this.maxSpeed + newSpeed);
+    //     },
+    //
+    //     changeYear: function () {
+    //         let newValue = 1;
+    //         console.log(this.year + newValue);
+    //     }
+    // }
+    // car.info();
+    // car.drive();
+    // car.increaseMaxSpeed();
+    // car.changeYear();
+
+    // ==============================================
+    //
+    //
+    // ==============================================
+    //     - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+    // -- drive () - яка виводить в консоль "їдемо зі швидкістю {максимальна швидкість} на годину"
+    // -- info () - яка виводить всю інформацію про автомобіль
+    // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+    // -- changeYear (newValue) - змінює рік випуску на значення newValue
+
+    // // let car =
+    // //     {model: 'Ford', generator: 'USA', year: 2018, maxSpeed: 280, engine: 2};
+    // function NewCar(model, generator, year, maxSpeed, engine) {
+    //     this.model = model;
+    //     this.generator = generator;
+    //     this.year = year;
+    //     this.maxSpeed = maxSpeed;
+    //     this.engine = engine;
+    //
+    //     this.drive = function () {
+    //         console.log(`Їдемо зі швидкістю ${this.maxSpeed} на годину`);
+    //     },
+    //
+    //     this.increaseMaxSpeed = function () {
+    //         let newSpeed = 30;
+    //         console.log(this.maxSpeed + newSpeed);
+    //     },
+    //         this.changeYear = function () {
+    //         let newValue = 1;
+    //         console.log(this.year + newValue);
+    //     },
+    //     this.info = function () {
+    //         console.log(car);
+    //     },
+    //
+    //
+    // }
+    // let cars = new NewCar('Ford', 'USA', 2018, 280, 2);
+    // console.log(cars);
+    // cars.drive();
+    // cars.increaseMaxSpeed();
+    // cars.changeYear();
+
+
+
+
+    // ==============================================
+    //
+    // ==============================================
+    //     - Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+    // -- drive () - яка виводить в консоль "їдемо зі швидкістю {максимальна швидкість} на годину"
+    // -- info () - яка виводить всю інформацію про автомобіль
+    // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+    // -- changeYear (newValue) - змінює рік випуску на значення newValue
+
+
+    // class Car {
+    //     constructor(model, generator, year, maxSpeed, engine) {
+    //         this.model = model;
+    //         this.generator = generator;
+    //         this.year = year;
+    //         this.maxSpeed = maxSpeed;
+    //         this.engine = engine;
+    //     }
+    //     drive() {
+    //         console.log(`Їдемо зі швидкістю ${this.maxSpeed} на годину`);
+    //     }
+    //     changeYear() {
+    //         let newValue = 1;
+    //         console.log(this.year + newValue);
+    //     }
+    //
+    // }
+    //
+    // const newCar = new Car('Ford', 'USA', 2018, 280, 2);
+    // newCar.drive();
+    // console.log(newCar);
+    // newCar.changeYear();
+
+    // class Car {
+    //     constructor(model, generator, year, maxSpeed, engine) {
+    //         this.model = model;
+    //         this.generator = generator;
+    //         this.year = year;
+    //         this.maxSpeed = maxSpeed;
+    //         this.engine = engine;
+    //     }
+    //         drive(speed) {
+    //         console.log(`Їдемо зі швидкістю ${this.maxSpeed} на годину`);
+    //     }
+    // }
+    // let newCar = new Car('Ford', 'USA', 2018, 270, 2)
+    // console.log(newCar);
+    // C
+    //
+    // class Formula extends Car {}
+    // let formula = new Formula('Ford', 'USA', 2018, 270, 2)
+    // console.log(formula);
+
+    // ==============================================
+    //
+    //
+    // ==============================================
+    //     -створити класс попелюшка з полями ім'я, вік, розмір ноги
+    // --Створити 10 попелюшок , покласти їх в масив
+    // --Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+    // -- за допоиоги циклу знайти яка попелюшка повинна бути з принцом
+    //
+    // class Human{
+    //     constructor(name, age) {
+    //         this.name = name;
+    //         this.age = age
+    //     }
+    // }
+    // class Cinderella extends Human{
+    //     constructor(name, age, footSize) {
+    //         super(name, age);
+    //         this.footSize = footSize
+    //     }
+    // }
+    // class Princ extends Human{
+    //     constructor(name, age, shoeSize) {
+    //         super(name, age);
+    //         this.shoeSize = shoeSize
+    //     }
+    //     findCinderell(array) {
+    //         let find = null;
+    //         for (const arrayElement of array) {
+    //             if (arrayElement.footSize === this.shoeSize) {
+    //                 find = arrayElement;
+    //             }
+    //         }
+    //         if (find) {
+    //             console.log('My Cinderella name'+ find.name);
+    //         }else {
+    //             console.log('I not find my Cinderella');
+    //         }
+    //     }
+    // }
+    //
+    // let cinderella1 = new Cinderella('Karina', 18, 35);
+    // let cinderella2 = new Cinderella('Mira', 19, 38);
+    // let cinderella3 = new Cinderella('Olya', 21, 37);
+    // let cinderella4 = new Cinderella('Olena', 24, 35.5);
+    // let cinderella5 = new Cinderella('Anya', 27, 41);
+    // let cinderella6 = new Cinderella('Tanya', 23, 38.5);
+    // let cinderella7 = new Cinderella('Iryna', 19, 36);
+    // let cinderella8 = new Cinderella('Nastya', 21, 40);
+    // let cinderella9 = new Cinderella('Kristina', 25, 36.5);
+    // let cinderella10 = new Cinderella('Solomiya', 23, 39);
+    // let arrayCinderells = [cinderella1, cinderella2, cinderella3, cinderella4, cinderella5, cinderella6, cinderella7, cinderella8, cinderella9, cinderella10];
+    // let prince = new Princ('Sanya', 22, 39);
+    // prince.findCinderell(arrayCinderells);
+    
+</script>
+</body>
+</html>
